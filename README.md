@@ -55,6 +55,9 @@ jobs:
           action: "close"
 ```
 
+## Adding the stc-rec.tamatoledo.org Custom Domain
+
+In this case I followed https://learn.microsoft.com/en-us/azure/static-web-apps/custom-domain-external and made a `CNAME` change at [ENOM.com](https://www.enomcentral.com/domains/control-panel/default.aspx?DomainNameID=348563858) to make it happen.  
 
 
 
