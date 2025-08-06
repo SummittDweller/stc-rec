@@ -1,5 +1,7 @@
 # STC Rec - Hugo Static Site
 
+As of August 6, 2025, this project is deployed as an Azure Static Web App at https://ashy-tree-0b6345b1e.2.azurestaticapps.net.  
+
 ## Development
 
 ### Clone
