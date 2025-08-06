@@ -1,0 +1,115 @@
+{{ define "main" }}
+{{ `<!-- enter: layouts/index.html -->` | safeHTML }}
+
+<div class="container mt-3 mb-3">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">
+        Welcome!
+      </h1>
+
+      <div class="welcome">
+        <p>{{ "Welcome to **STC Rec**!" | markdownify }}</p>
+        
+        <!-- <p>{{ "We are excited to begin registration for our 2024 seasons!</p>  <p>Watch this space for news and details in the coming weeks." | markdownify }}</p> --> 
+        <p>{{ "We are excited to start our 2025 Summer REC Season!" }}</p>
+        <p>{{ "This includes T-Ball, Baseball, Softball, Volleyball, Golf, Tennis, Soccer, Speed & Agility." | markdownify }}</p>
+        <p>{{ "You can register online by going to: http://getmeregistered.com/stcrecsummer , or you can click on the registration page and download/print the forms." | markdownify }}</p>
+        <!-- <p>{{ "We are excited to start our 2023 Football REC Season!  This includes Football, Soccer and Baseketball.  You can register online by going to: http://getmeregistered.com/stcrec , or you can click on the registration page and download/print the forms." | markdownify }}</p> -->
+
+        <p>Like our <a href="https://www.facebook.com/southtamarecreation/" target="_blank"><span class='button-shortcode'>Facebook page (<i class='fab fa-facebook-f'></i>)</span></a> and stay up-to-date on all activities! </p>
+
+        <div class="welcome-image">
+          <img src=""></img>
+        </div>
+
+        <!-- Lifted from guild-protected-pages 11ty code -->
+        <style>
+          iframe {
+            width: 100%;
+            height: 600px;
+            margin: 5px;
+          }
+        </style>
+        
+
+        <!-- Display the published STC announcements page 
+        <iframe src="https://docs.google.com/document/d/10Nj9M3yj6ygvZkuoPdK-w_E1s1SYpuFO4LFZng5pK-8/pub?embedded=true"></iframe> -->
+
+        <!-- No more announcements page... replaced above with the schedule on 5-Mar-2025 -->
+        <iframe src="https://docs.google.com/spreadsheets/d/1j7lRe6BIxdR2x5NmtrjeCjE6CNaws8ljZVw8TxHxybU/edit?usp=sharing"></iframe>
+        
+        <!-- end of 11ty code -->        
+
+        </div>
+      </div>
+      <div class="card-footer"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title"> Dates to Remember </h2>
+
+        <ul class="upcoming-events">
+          {{ range (where .Site.RegularPages.ByDate "Type" "event") }}
+          {{ if ge .Date.Unix now.Unix }}
+            <div class="keep-together">
+              <li class="event">
+                <span class="event-line-1">
+                  <a href="{{ .Permalink }}">
+                    {{ if eq .Date.Year now.Year }}
+                      {{ .Title }} <span class="nowrap">- {{ .Date.Format "Monday, Jan 2" }}</span></a>
+                    {{ else }}
+                      {{ .Title }} <span class="nowrap">- {{ .Date.Format "Monday, Jan 2, 2006" }}</span></a>
+                    {{ end }}
+                </span>
+                <br/>
+                <span class="event-line-2">
+                  &nbsp;&nbsp; <span class="nowrap">{{ .Params.startTime }} to {{ .Params.endTime }}</span> <span class="nowrap">&bullet; {{ .Params.location }}</span> <span class="nowrap">&bullet; {{ .Params.city }}</span>
+                </span>
+              </li>
+            </div>
+          {{ end }}
+        {{ end }}
+
+        <li class="event">
+          <span class="event-line-1">
+            {{ "Baseball/Softball/T-Ball Registration - Due Friday, March 14, 2025" | markdownify }}
+            <!-- {{ "Football/Soccer Registration - Due August 28, 2023" | markdownify }} -->
+          </span>
+        </li>
+        <li class="event">
+          <span class="event-line-1">
+            {{ "All Other Sports Registration - Due Wednesday, April 30, 2025" | markdownify }}
+            <!-- {{ "Basketball Registration - Due August 28, 2023" | markdownify }} -->
+          </span>
+        </li>
+
+        <p/>
+        <p>{{ "**Return forms & payment to:** Elementary Office, Middle School Office, or Mail to: PO Box 271, Toledo, IA 52342" | markdownify }}</p>
+
+      </ul>
+    </div>
+    <div class="card-footer"></div>
+  </div>
+
+  {{ $paginator := .Paginate ( where .Site.RegularPages.ByPublishDate.Reverse "Type" "eq" "post") }}
+  {{ if .Site.Params.startPageColumns }}
+    <div class="card-columns">
+      {{ range $paginator.Pages }}
+        {{- partial "content_index.html" . -}}
+      {{ end }}
+    </div>
+  {{ else }}
+    {{ range $paginator.Pages }}
+      <div class="mb-3">
+        {{- partial "content_index.html" . -}}
+      </div>
+    {{ end }}
+  {{ end }}
+
+  {{ template "_internal/pagination.html" . }}
+</div>
+
+{{ `<!-- exit: layouts/index.html -->` | safeHTML }}
+{{ end }}

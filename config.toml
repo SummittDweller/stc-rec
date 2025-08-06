@@ -1,0 +1,164 @@
+# baseURL = "https://stc-rec.tamatoledo.org/"
+title = "STC-Rec"
+# author = "Steve Francia"
+# copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+# paginate = 3
+# ignoreFiles = ["content/portfolio/\\.*","content/product/\\.*","content/sketch/\\.*"]
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+enableEmoji = true
+
+## Theme specific examples
+#author = "Sebastian Pech"
+#copyright = "Sebastian Pech"
+googleAnalytics = "UA-187260584-4"
+enableRobotsTXT = true
+pygmentsCodeFences = true
+canonifyurls = true
+# paginate = 10
+theme="bootstrap-bp-hugo-theme"
+
+## Config settings for the new, default "Goldmark" markdown engine
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    hrefTargetBlank = true
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[permalinks]
+  posts = "/:year/:month/:slug/"
+  post = "/:year/:month/:slug/"
+  pages = "/:slug/"
+  page = "/:slug/"
+
+[Author]
+  name = "Mackenzie McFate"
+
+[params]
+  name = "Mackenzie McFate"
+  bannerImage = "/images/banner1.jpg"
+  description = "Copyright © 2014. All Rights Reserved. Original design by Mark A. McFate"
+  #images = ["logo.jpg"]
+  # showPostSummary = true
+  # startPageColumns = true
+  # showListsGrouped = true
+  alwaysExpandMenu = true
+  customDateFormat = "Monday, January 2, 2006"  # customDateFormat = "02.01.2006"
+  hideReadingTime = true
+  # themeColor="dark" # dark, light, blue, do not set for bootstrap default
+  # js=["/js/test_site.js"]
+  # css=["/css/test_site.css"]
+  # csscdn=["https://fonts.googleapis.com/css?family=Concert+One|Roboto&display=swap"]
+
+
+#[languages]
+#  [languages.en]
+#    languageName = "English"
+#    title = "My blog"
+#    weight = 1
+#    [languages.en.params]
+#  [languages.de]
+#    languageName = "Deutsch"
+#    title = "Mein Blog"
+#    weight = 2
+#    [languages.de.params]
+
+
+# Sets Social Media icons to appear and link to your account. Value should be your
+# username unless otherwise noted.
+# Code from https://themes.gohugo.io/future-imperfect/ theme
+[social]
+  facebook = "https://www.facebook.com/SouthTamaRecreation/"
+  #email = ""
+  # youtube = ""
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About Us"
+    url = "/about/"
+    weight = 10
+    pre = "<i class='fas fa-school'></i>"
+
+  [[menu.main]]
+    identifier = "schedules"
+    name = "Schedules"
+    url = "/schedules/"
+    weight = 15
+    pre = "<i class='fas fa-calendar-alt'></i>"
+
+  [[menu.main]]
+    identifier = "registration"
+    name = "Registration"
+    url = "/registration/"
+    weight = 20
+    pre = "<i class='fas fa-align-justify'></i>"
+
+  [[menu.main]]
+    identifier = "bus"
+    name = "Bus Info"
+    url = "/bus/"
+    weight = 25
+    pre = "<i class='fas fa-bus'></i>"
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact Information"
+    url = "/contact/"
+    weight = 27
+    pre = "<i class='far fa-envelope'></i>"
+
+  [[menu.footer]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+    pre = "<i class='fas fa-address-card'></i>"
+
+  [[menu.footer]]
+    identifier = "venues"
+    name = "Venues"
+    url = "/venues/"
+    weight = 30
+    pre = "<i class='fas fa-tags'></i>"
+
+[taxonomies]
+venues = "venues"
+#category = "categories"
+#tag = "tags"
+#series = "series"
+
+[privacy]
+
+  [privacy.vimeo]
+    disable = false
+    simple = true
+
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disable = false
+    simple = true
+
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true

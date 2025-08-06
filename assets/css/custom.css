@@ -1,0 +1,167 @@
+/* See https://travishorn.com/creating-a-responsive-header-image-8ce1d2ed8a4c for guidance */
+
+#site-banner {
+  overflow: hidden;
+  display: block;
+}
+
+#site-banner-image {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 100%
+}
+
+.navbar {
+  padding: 3px 1em;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+span.button-shortcode {
+  border: 1px solid blue;
+  border-radius: 5px;
+  background: black;
+  color: whitesmoke;
+  padding: 5px 10px;
+}
+
+span.nowrap {
+  white-space: nowrap;
+}
+
+.video-window {
+  max-width: 100%;
+  text-align: center;
+  max-height: 500px;
+}
+
+.video-left {
+  width: 100%;
+  text-align: center;
+}
+
+.video-left,
+.video-right {
+  display: block;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.video-right p {
+  padding: 0 15px;
+  width: 100%;
+}
+
+h4, h3, h2,
+h1.card-title,
+.text-primary {
+  color: #000000 !important;
+}
+
+.card-title {
+  border-bottom: 1px solid #000000;
+}
+
+.event-line-1 {
+  font-size: 1em;
+}
+
+.event-line-2 {
+  font-size: 0.75em;
+}
+
+.welcome-image {
+  width: 100%;
+  text-align: center;
+}
+
+div.welcome-image img {
+  max-width: 100%;
+}
+
+/*
+div.two-columns {
+ -webkit-columns: 2 300px;
+ -moz-columns: 2 300px;
+ columns: 2 300px;
+ margin-bottom: 10px;
+}
+*/
+
+.card-body {
+  background-color: whitesmoke;
+}
+
+/*
+div.card-body ul {
+ margin-bottom: 10px;
+ -webkit-columns: 3 220px;
+ -moz-columns: 3 220px;
+ columns: 3 220px;
+}
+*/
+
+div.card-body ul.one-column {
+  -webkit-columns: 1;
+  -moz-columns: 1;
+  columns: 1;
+  margin-bottom: 10px;
+}
+
+/*
+div.three-columns ul {
+ -webkit-columns: 3 220px;
+ -moz-columns: 3 220px;
+ columns: 3 220px;
+ margin-bottom: 10px;
+}
+*/
+
+/*
+div.keep-together {
+  display: inline-block;
+}
+*/
+
+li.event {
+  margin-right: 5px;
+}
+
+div.form-field {
+  padding: 5px; 15px;
+}
+
+div.form-field-footer {
+  font-size: smaller;
+}
+
+div.form-field input,
+div.form-field textarea {
+  width: 100%;
+}
+
+input.form-submit {
+  margin: 5px 15px;
+}
+
+h2, h3 {
+  margin-top: 1em;
+}
+
+h2.card-title {
+  margin-top: 0;
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+
+div.build-info {
+  font-size: smaller;
+  text-align: center;
+}

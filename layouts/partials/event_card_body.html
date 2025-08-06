@@ -1,0 +1,20 @@
+{{ $customDateFormat := "02.01.2006" }}
+{{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
+
+<div class="card-body">
+    <h1 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h1>
+    <h6 class="card-subtitle mb-2 text-muted">
+        <span class="nowrap"><i class="fas fa-calendar-day"></i>&nbsp;{{ .Date.Format $customDateFormat }}</span> <span class="nowrap">&bullet; {{ .Params.startTime }} to {{ .Params.endTime }}</span>
+    </h6>
+
+    {{ if .Scratch.Get "showPostSummary" }}
+        <p class="card-text">{{ .Summary }}</p>
+
+        <a href="{{ .RelPermalink }}" class="card-link">{{ i18n "readmore" }}&hellip;</a>
+        {{ if ne .Site.Params.hideReadingTime true }}
+             (<i class="fas fa-clock"></i>&nbsp;~{{ .ReadingTime }} Min.)
+        {{end}}
+    {{ else }}
+        <p class="card-text">{{ .Content }}</p>
+    {{ end }}
+</div>
